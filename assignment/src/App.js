@@ -1,7 +1,11 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import $ from 'jquery';
+import Popper from 'popper.js';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import gender from './sprite-gender.png';
 import './App.css';
-
 import ReactSwipe from 'react-swipe';
 import styled from "styled-components";
 
@@ -84,44 +88,49 @@ class App extends Component {
 
             </p> 
               <div className="center">
-         <h1>ReactSwipe.js </h1>
-         <h2>Open this page from a mobile device (real or emulated).</h2>
-        <h2>You can pass <a href="https://github.com/voronianski/swipe-js-iso#config-options">Swipe.js options</a> as query params.</h2>
-
          <ReactSwipe ref={el => (this.reactSwipe = el)} className="mySwipe"  swipeOptions={swipeOptions}>
              <Slide>
             <div>
               <p>Description Slide</p>
-              <p>code for page 1 goes here</p>
-                <button type="button" onClick={this.next}>Next</button>
+             <a>
+             <img onClick={this.next} src={gender} />
+             </a>
+               
             </div>
           </Slide>
           <Slide>
             <div>
               <p>code for page 2 goes here</p>
-               <button type="button" onClick={this.prev}>Prev</button>
-          <button type="button" onClick={this.next}>Next</button>
+              <input type="text" placeholder="Birth date"/>
+              <br/>
+              
+          <button type="button" onClick={this.next}>Submit</button>
             </div>
           </Slide>
  <Slide>
             <div>
               <p>code for page 3 goes here</p>
-               <button type="button" onClick={this.prev}>Prev</button>
-          <button type="button" onClick={this.next}>Next</button>
+
+               <input type="text" placeholder="Current city"/>
+              <br/>
+              
+          <button type="button" onClick={this.next}>Submit</button>
+             
             </div>
           </Slide>
            <Slide>
-            <div>
+            <div >
               <p>code for page 4 goes here</p>
-               <button type="button" onClick={this.prev}>Prev</button>
+               <input type="text" placeholder="Company You work"/>
+              <br/>
           
             </div>
           </Slide>
          </ReactSwipe>
-
-          <div>
-          <button type="button" onClick={this.prev}>Prev</button>
+  <button type="button" onClick={this.prev}>Prev</button>
           <button type="button" onClick={this.next}>Next</button>
+          <div>
+         
         </div>
             </div>
            
