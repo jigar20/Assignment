@@ -4,14 +4,94 @@
 
 .App-logo {
     float: left;
-    width: 60px;
+    margin: 6px 0 0 10px;
 }
 
+.App-logo a {
+    display: block;
+}
+.landingpage-sticky {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10001;
+}
 .App-header {
-    background-color: #116a9e;
-    height: 20px;
-    padding: 20px;
-    color: white;
+   background: #116a9e;
+    height: 54px;
+    position: relative;
+}
+
+.logo-border {
+    border-right: 1px solid #4188b1;
+    width: 1px;
+    float: left;
+    height: 35px;
+    margin: 10px 15px 0 14px;
+}
+.menu-left {
+    float: left;
+    padding: 0;
+    z-index: 3;
+    position: relative;
+}
+header ul, header li {
+    margin: 0;
+    padding: 0;
+}
+ul, ol {
+    list-style: none;
+}
+.menu-left>li {
+    float: left;
+    margin: 0 10px;
+    position: relative;
+}
+
+header ul li, header li {
+    list-style-type: none;
+}
+
+.menu-left>li>a, .menu-right>li>a {
+    line-height: normal;
+}
+
+.menu-left>li>a, .menu-right>li>a {
+    color: #fff;
+    text-decoration: none;
+    padding: 19px 0;
+    display: block;
+    cursor: pointer;
+}
+
+.menu-left>li.creditscore-menu a {
+    border: 1px solid #fff;
+    margin: 13px 0 0;
+    padding: 5px 8px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.short-menu-right {
+    margin-right: 0;
+}
+
+.menu-right {
+    float: right;
+    padding: 0;
+    margin: 0 16px 0 0;
+}
+
+.menu-left>li>a, .menu-right>li>a {
+    line-height: normal;
+}
+
+.menu-left>li>a, .menu-right>li>a {
+    color: #fff;
+    text-decoration: none;
+    padding: 19px 0;
+    display: block;
+    cursor: pointer;
 }
 
 .App-title {

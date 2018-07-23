@@ -3,7 +3,7 @@ import $ from 'jquery';
 import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './bankbazaar-logo.png';
 import gender from './sprite-gender.png';
 import './App.css';
 import ReactSwipe from 'react-swipe';
@@ -81,9 +81,42 @@ class App extends Component {
     };
         return ( 
             <div className = "App" >
-            <header className = "App-header" >
-            <img src = { logo }  className = "App-logo" alt = "logo" / >
-            <h1 className = "App-title" > Welcome To Bank Bazzar </h1> 
+            <header className = "App-header landingpage-sticky" >
+            <div className = "App-logo" > <img src = { logo }  alt = "logo" / ></div>
+           <span className="logo-border"></span>
+           
+            <nav className="menu-nav">
+            <ul className="menu-left">
+            <li className="loans-menu">
+                <a href="/loan.html" data-target="#loans" title="Apply Loan Online">LOANS</a>                
+            </li>
+            <li className="loans-menu">
+                <a href="/loan.html" data-target="#loans" title="Apply Loan Online">CARDS</a>                
+            </li>
+             <li className="loans-menu">
+                <a href="/loan.html" data-target="#loans" title="Apply Loan Online">INSURANCE</a>                
+            </li>
+             <li className="loans-menu">
+                <a href="/loan.html" data-target="#loans" title="Apply Loan Online">INVESTMENTS</a>                
+            </li>
+            <li className="creditscore-menu">
+                <a href="/credit-score.html?utm_source=bb&amp;utm_medium=display&amp;utm_campaign=HEADER" data-target="#credit-score" title="Free Credit Score">FREE CREDIT SCORE</a>
+                      
+                           
+                                  
+                           
+                    </li>
+            </ul>
+
+           
+<ul className="menu-right  short-menu-right ">
+<li>
+<a href="javascript:void(0)" className="dropdown-toggle menu-login social-sign-in js-sign-in" executeafter="SocialLogin.init();" rel="nofollow"  title="Login">
+                Login
+            </a>
+</li>
+</ul>
+            </nav>
             </header > <p className = "App-intro" >
 
             </p> 
