@@ -93,7 +93,114 @@ header ul li, header li {
     display: block;
     cursor: pointer;
 }
+.eform-strip {
+    background: #40e0d0;
+    text-align: center;
+}
+.eform-strip h2 {
+    font-size: 20px;
+    padding: 10px;
+    margin: 0;
+    font-weight: 400;
+    color: #fff;
+}
 
+.radio-col {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+    padding: 8px 10px;
+}
+
+.labelContainer {
+    padding: 8px 10px;
+    display: block;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 0;
+    position: relative;
+}
+
+.labelContainer.checked {
+    background: #40e0d0;
+    border-radius: 5px;
+}
+
+.labelContainer .textLabel {
+    display: block;
+    margin: 5px 0;
+    line-height: normal;
+}
+
+
+
+
+
+
+/*last slide*/
+
+.SlideshowViewDesktop_slideContainer_30QVq {
+    color: #fff;
+    background: #3dbfd9;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    min-height: 540px;
+}
+.Company_slideDesktopContainerBg_dbizA {
+    background-image: url(https://bankbazaar.com/images/sprite/company-bg-v1.png);
+    background-position: center -5px;
+    background-repeat: no-repeat;
+    min-height: 478px;
+}
+
+.Company_slideDesktopContainerBg_dbizA .font-xxlg {
+    font-size: 22px;
+    position: relative;
+    top: 188px;
+}
+.SlideshowViewDesktop_slideTitle_2hXVo {
+    margin: 15px 0 0;
+}
+.font-xxlg {
+    /* font-size: 26px; */
+    line-height: 30px;
+}
+
+.SlideshowViewDesktop_slideControlPrev_28nsF {
+    position: absolute;
+    left: 15px;
+    top: 45%;
+    margin-top: -20px;
+}
+.SlideshowViewDesktop_slideControlButtonIcon_iILAn {
+    background: #2c3e50;
+    border: 3px solid #fff;
+    border-radius: 23px;
+    opacity: .5;
+    display: inline-block;
+    padding: 0 2px 4px;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+a {
+    text-decoration: none;
+    color: #38acc9;
+    transition: all .25s ease 0s;
+}
+.Sprite_iconLeft_FXNM5 {
+    background-position: -4px -1085px;
+}
+.SlideshowViewDesktop_slideControlNext_3njXD {
+    position: absolute;
+    right: 15px;
+    top: 45%;
+    margin-top: -20px;
+}
+.Sprite_iconRight_2_JIq {
+    background-position: -3px -1131px;
+}
 .App-title {
     font-size: 1.5em;
 }

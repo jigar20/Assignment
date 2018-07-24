@@ -4,7 +4,7 @@ import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import React, { Component } from 'react';
 import logo from './bankbazaar-logo.png';
-import gender from './sprite-gender.png';
+import gender from './male.jpg';
 import './App.css';
 import ReactSwipe from 'react-swipe';
 import styled from "styled-components";
@@ -50,7 +50,14 @@ class App extends Component {
     this.prev = this.prev.bind(this);
     this.getSlideCount = this.getSlideCount.bind(this);
     this.getSlideIndex = this.getSlideIndex.bind(this);
+
+    this.state = {
+    company : ''
   }
+  this.updateInput = this.updateInput.bind(this);
+ this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
   componentDidMount() {
     this.getSlideIndex();
     this.getSlideCount();
@@ -71,6 +78,18 @@ class App extends Component {
   getSlideCount() {
     this.setState({ slideCount: this.reactSwipe.getNumSlides() });
   }
+
+     updateInput(event){
+this.setState({company : event.target.value})
+}
+handleSubmit(){
+console.log('Your input value is: ' + this.state.company)
+if(this.state.company!=undefined){
+this.next()
+}
+//Send state to the server code
+}
+
     render() {
          const swipeOptions = {
       callback: () => {
@@ -100,12 +119,8 @@ class App extends Component {
                 <a href="/loan.html" data-target="#loans" title="Apply Loan Online">INVESTMENTS</a>                
             </li>
             <li className="creditscore-menu">
-                <a href="/credit-score.html?utm_source=bb&amp;utm_medium=display&amp;utm_campaign=HEADER" data-target="#credit-score" title="Free Credit Score">FREE CREDIT SCORE</a>
-                      
-                           
-                                  
-                           
-                    </li>
+                <a href="/credit-score.html?utm_source=bb&amp;utm_medium=display&amp;utm_campaign=HEADER" data-target="#credit-score" title="Free Credit Score">FREE CREDIT SCORE</a>           
+              </li>
             </ul>
 
            
@@ -117,18 +132,35 @@ class App extends Component {
 </li>
 </ul>
             </nav>
-            </header > <p className = "App-intro" >
 
-            </p> 
+
+            </header >
+
+
+ <div className="eform-strip slide-form-longHeader">
+        <h2 className="js-header-content">Check Your Experian Credit Score</h2>
+    </div>
+             
               <div className="center">
          <ReactSwipe ref={el => (this.reactSwipe = el)} className="mySwipe"  swipeOptions={swipeOptions}>
              <Slide>
             <div>
-              <p>Description Slide</p>
+              <p>Please Select Gender</p>
+              <div className="radio-col">
+              <label class="labelContainer checked">
              <a>
-             <img onClick={this.next} src={gender} />
+             <img onClick={this.next} src={gender} height="230" width="314" styled="display:inline;" />
+             <span className="textLabel">Male</span>
              </a>
-               
+             </label>
+              <div className="radio-col">
+              <label class="labelContainer checked">
+                <a>
+             <img onClick={this.next} src={gender} height="230" width="314"/>
+             </a>
+             </label>
+             </div>
+             </div>
             </div>
           </Slide>
           <Slide>
@@ -140,28 +172,43 @@ class App extends Component {
           <button type="button" onClick={this.next}>Submit</button>
             </div>
           </Slide>
- <Slide>
-            <div>
-              <p>code for page 3 goes here</p>
 
-               <input type="text" placeholder="Current city"/>
-              <br/>
-              
-          <button type="button" onClick={this.next}>Submit</button>
+           <Slide className="SlideshowViewDesktop_slideContainer_30QVq">
+           
              
+             <div>
+             <span>Please Input in company you work or you own.</span>
+             <br/>
+             <br/>
+               <input onChange={this.updateInput} placeholder="Company You work For"/>
+               <br/>
+               <br/>
+             <input type="button" value="Submit" id="addpix" onClick={this.handleSubmit}/>
+              <br/>
+          </div>
+            <div className="slideControl">
+              <div className="SlideshowViewDesktop_slideControlPrev_28nsF">
+
+                <a className="SlideshowViewDesktop_slideControlButtonIcon_iILAn" onClick={this.prev}>
+                  <span> B </span>
+                </a>
+              </div>
+              <div className="SlideshowViewDesktop_slideControlNext_3njXD">
+                <a className="SlideshowViewDesktop_slideControlButtonIcon_iILAn" onClick={this.next}>
+                  <span> A</span>
+                </a>
+              </div>
             </div>
           </Slide>
-           <Slide>
-            <div >
-              <p>code for page 4 goes here</p>
-               <input type="text" placeholder="Company You work"/>
-              <br/>
-          
+           <Slide className="SlideshowViewDesktop_slideContainer_30QVq">
+            <div>
+              <p>Thank you for your input.You will get your credit-score Soon.</p>
+             
             </div>
           </Slide>
          </ReactSwipe>
   <button type="button" onClick={this.prev}>Prev</button>
-          <button type="button" onClick={this.next}>Next</button>
+          <button type="button" className="btn btn-large" onClick={this.next}>Next</button>
           <div>
          
         </div>
