@@ -131,7 +131,13 @@ header ul li, header li {
     margin: 5px 0;
     line-height: normal;
 }
-
+.slideContainerHackDesktop .btn {
+    font-size: 20px;
+    background-color: #ff5a5f;
+    padding: 8px 20px;
+    border-radius: 4px;
+    position: inherit;
+}
 
 
 

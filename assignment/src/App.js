@@ -8,7 +8,8 @@ import gender from './male.jpg';
 import './App.css';
 import ReactSwipe from 'react-swipe';
 import styled from "styled-components";
-
+import { Provider as AlertProvider } from 'react-alert'
+import AlertTemplate from 'react-alert-template-basic'
 
 
 
@@ -52,10 +53,14 @@ class App extends Component {
     this.getSlideIndex = this.getSlideIndex.bind(this);
 
     this.state = {
-    company : ''
+    company : '',
+    day : '',
+   
   }
   this.updateInput = this.updateInput.bind(this);
  this.handleSubmit = this.handleSubmit.bind(this);
+  this.updateInputDay = this.updateInputDay.bind(this);
+ this.handleSubmitDate = this.handleSubmitDate.bind(this);
   }
 
   componentDidMount() {
@@ -84,12 +89,23 @@ this.setState({company : event.target.value})
 }
 handleSubmit(){
 console.log('Your input value is: ' + this.state.company)
-if(this.state.company!=undefined){
+if(this.state.company){
 this.next()
 }
 //Send state to the server code
 }
 
+  updateInputDay(event){
+this.setState({day : event.target.value})
+}
+ 
+handleSubmitDate(){
+console.log('Your input value is: ' + this.state.day)
+if(this.state.day){
+this.next()
+}
+//Send state to the server code
+}
     render() {
          const swipeOptions = {
       callback: () => {
@@ -143,7 +159,7 @@ this.next()
              
               <div className="center">
          <ReactSwipe ref={el => (this.reactSwipe = el)} className="mySwipe"  swipeOptions={swipeOptions}>
-             <Slide>
+             <Slide  className="SlideshowViewDesktop_slideContainer_30QVq">
             <div>
               <p>Please Select Gender</p>
               <div className="radio-col">
@@ -162,14 +178,40 @@ this.next()
              </div>
              </div>
             </div>
-          </Slide>
-          <Slide>
-            <div>
-              <p>code for page 2 goes here</p>
-              <input type="text" placeholder="Birth date"/>
-              <br/>
+            <div className="slideControl">
               
-          <button type="button" onClick={this.next}>Submit</button>
+              <div className="SlideshowViewDesktop_slideControlNext_3njXD">
+                <a className="SlideshowViewDesktop_slideControlButtonIcon_iILAn" onClick={this.next}>
+                  <span> A </span>
+                </a>
+              </div>
+            </div>
+          </Slide>
+          <Slide className="SlideshowViewDesktop_slideContainer_30QVq">
+            <div>
+              <p>Please Enter your Birth Date</p>
+              <input type="text" placeholder="Birth date" onChange={this.updateInputDay}  placeholder="DD/MM/YYYY"/>
+                
+              <br/>
+              <br/>
+               <div className="slideContainerHackDesktop">
+               <span> 
+          <button  className="btn btn-large " type="button"id="addpisx" onClick={this.handleSubmitDate}>Submit</button>
+          </span>
+          </div>
+            </div>
+            <div className="slideControl">
+              <div className="SlideshowViewDesktop_slideControlPrev_28nsF">
+
+                <a className="SlideshowViewDesktop_slideControlButtonIcon_iILAn" onClick={this.prev}>
+                  <span> B </span>
+                </a>
+              </div>
+              <div className="SlideshowViewDesktop_slideControlNext_3njXD">
+                <a className="SlideshowViewDesktop_slideControlButtonIcon_iILAn" onClick={this.handleSubmitDate}>
+                  <span> A </span>
+                </a>
+              </div>
             </div>
           </Slide>
 
@@ -183,9 +225,15 @@ this.next()
                <input onChange={this.updateInput} placeholder="Company You work For"/>
                <br/>
                <br/>
-             <input type="button" value="Submit" id="addpix" onClick={this.handleSubmit}/>
+               <div className="slideContainerHackDesktop">
+               <span>
+                 <button className="btn btn-large " value="Submit" id="addpix" onClick={this.handleSubmit}>Submit</button>
+                 </span>
+               <div>
+           
               <br/>
           </div>
+
             <div className="slideControl">
               <div className="SlideshowViewDesktop_slideControlPrev_28nsF">
 
@@ -194,11 +242,13 @@ this.next()
                 </a>
               </div>
               <div className="SlideshowViewDesktop_slideControlNext_3njXD">
-                <a className="SlideshowViewDesktop_slideControlButtonIcon_iILAn" onClick={this.next}>
-                  <span> A</span>
+                <a className="SlideshowViewDesktop_slideControlButtonIcon_iILAn" onClick={this.handleSubmit}>
+                  <span> A </span>
                 </a>
               </div>
             </div>
+           </div> 
+            </div> 
           </Slide>
            <Slide className="SlideshowViewDesktop_slideContainer_30QVq">
             <div>
