@@ -232,6 +232,9 @@ a {
 .myRadio{
 width:20px; height:20px;
 }
+.warning {
+    color: red;
+}
 @keyframes App-logo-spin {
     from {
         transform: rotate(0deg);
